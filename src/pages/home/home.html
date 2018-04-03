@@ -8,6 +8,11 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-refresher (ionRefresh)="addOneSong($event)">
+    <ion-refresher-content>
+
+    </ion-refresher-content>
+  </ion-refresher>
   <h3>Ionic Menu Starter</h3>
   <ion-card *ngFor="let music of allMusic">
     <img [src]="music.image">

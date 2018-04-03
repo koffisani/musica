@@ -26,5 +26,12 @@ export class HomePage {
           this.allMusic = musicList
         });
   }
+  addOneSong (refresher) {
+    this.musicProvider.getOneSong()
+      .subscribe((oneSong:any) => {
+        this.allMusic.unshift(oneSong[0]);
+        refresher.complete();
+      });
+  }
 
 }
