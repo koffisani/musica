@@ -7,10 +7,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { MusicPlayerPage } from '../pages/music-player/music-player';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import { MediaPlugin } from '@ionic-native/media';
 
 import { MusicProvider } from '../providers/music/music';
 
@@ -18,7 +20,8 @@ import { MusicProvider } from '../providers/music/music';
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    MusicPlayerPage
   ],
   imports: [
     BrowserModule,
@@ -30,14 +33,16 @@ import { MusicProvider } from '../providers/music/music';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    MusicPlayerPage
   ],
   providers: [
     SocialSharing,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    MusicProvider
+    MusicProvider,
+    MediaPlugin
   ]
 })
 export class AppModule {}
